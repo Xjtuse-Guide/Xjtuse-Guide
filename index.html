@@ -20,7 +20,7 @@
             window.$docsify = {
                 // 项目名称
                 name: 'XJTUSE-GUIDE',
-                nameLink: 'README',
+                nameLink: '/README',
                 // 仓库地址，点击右上角的Github章鱼猫头像会跳转到此地址
                 repo: 'https://github.com/Hydrion-Qlz/XJTUSE-GUIDE',
                 // 侧边栏支持，默认加载的是项目根目录下的_sidebar.md文件
@@ -58,6 +58,13 @@
                     hideOtherSidebarContent: false,
                     namespace: 'Xjtuse-Guide',
                 },
+                latex: {
+                    inlineMath: [
+                        ['$', '$'],
+                        ['\\(', '\\)'],
+                    ], // default
+                    displayMath: [['$$', '$$']], // default
+                },
 
                 // todo
                 // plugins: [EditOnGithubPlugin.create('https://github.com/Snailclimb/JavaGuide-Interview/blob/master/')],
@@ -75,9 +82,13 @@
         <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
         <!--在所有的代码块上添加一个简单的Click to copy按钮来允许用户从你的文档中轻易地复制代码-->
         <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
-        <!--Java代码高亮-->
+        <!--代码高亮-->
         <script src="//unpkg.com/prismjs/components/prism-java.js"></script>
-        
         <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+
+        <!-- 支持latex -->
+        <script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+        <script src="//cdn.jsdelivr.net/npm/docsify-latex@0"></script>
     </body>
 </html>
