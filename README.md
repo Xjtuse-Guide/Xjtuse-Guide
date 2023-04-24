@@ -57,6 +57,7 @@ docsify serve .
     -   [外链图片](https://docsify.js.org/#/zh-cn/configuration?id=crossoriginlinks)
     -   [markdown 文档页内目录](https://github.com/mrpotatoes/docsify-toc)
     -   [pdf 渲染](https://github.com/lazypanda10117/docsify-pdf-embed)
+    -   各种群的链接
 
 -   [插件列表](https://docsify.js.org/#/awesome?id=plugins)
     -   [评论系统](https://docsify.js.org/#/zh-cn/plugins?id=disqus)
