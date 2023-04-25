@@ -22,7 +22,7 @@
 
 ## 怎样使用这个项目
 
-本项目已部署到 Github Pages，可以[在线](https://hydrion-qlz.github.io/XJTUSE-GUIDE/)浏览
+本项目已部署到 Github Pages，可以[在线](https://xjtuse-guide.github.io/Xjtuse-Guide/#/)浏览
 
 也可以将本项目拉取到本地运行，本项目使用 docsify 编译，因此本地需有 [nodejs](https://nodejs.org/en) 环境，建议下载 LTS 版本，下载后全局安装 docsify 依赖，然后运行即可。
 
@@ -44,8 +44,9 @@ docsify serve .
 -   如果你在阅读时候发现文档内容或者格式有问题，可以在仓库提 issue 或者修改后提 pr
 -   如果添加新的文件，请尽可能在所有可能引用该文件的地方加入引入，确保侧边栏显示正确
 -   如果你不懂如何自己提交，可提 issue 留下自己的联系方式，会有维护同学联系你进行文件上传
+-   [commit规范](https://blog.csdn.net/weixin_51474815/article/details/122652198)可以通过安装vscode插件git-commit-plugin来实现
 
-提交细节请参考[How to Contribute](docs/综述/How-to-Contribute.md)
+提交细节请参考[How to Contribute](How-to-Contribute.md)
 
 > 如果是软工的同学，建议还是自己搞懂如何提 pr、如何使用 Github，算是一种必须掌握的技能
 
