@@ -41,10 +41,10 @@ docsify serve .
 
 该项目由西安交通大学软件学院同学维护
 
--   如果你在阅读时候发现文档内容或者格式有问题，可以在仓库提 issue 或者修改后提 pr
--   如果添加新的文件，请尽可能在所有可能引用该文件的地方加入引入，确保侧边栏显示正确
--   如果你不懂如何自己提交，可提 issue 留下自己的联系方式，会有维护同学联系你进行文件上传
--   [commit规范](https://blog.csdn.net/weixin_51474815/article/details/122652198)可以通过安装vscode插件git-commit-plugin来实现
+- 如果你在阅读时候发现文档内容或者格式有问题，可以在仓库提 issue 或者修改后提 pr
+- 如果添加新的文件，请尽可能在所有可能引用该文件的地方加入引入，确保侧边栏显示正确
+- 如果你不懂如何自己提交，可提 issue 留下自己的联系方式，会有维护同学联系你进行文件上传
+- [commit规范](https://blog.csdn.net/weixin_51474815/article/details/122652198)可以通过安装vscode插件git-commit-plugin来实现
 
 提交细节请参考[How to Contribute](How-to-Contribute.md)
 
@@ -57,22 +57,22 @@ docsify serve .
 
 ## todo
 
--   内容完善
--   功能问题
+- 内容完善
+- 功能问题
 
-    - [ ]  [外链图片](https://docsify.js.org/#/zh-cn/configuration?id=crossoriginlinks)
-    - [ ]  [markdown 文档页内目录](https://github.com/mrpotatoes/docsify-toc)
-    - [x]  [pdf 渲染](https://github.com/lazypanda10117/docsify-pdf-embed)
-    - [ ]  各种群的链接
-    - [ ]  分流&转专业模块
+  - [ ] [外链图片](https://docsify.js.org/#/zh-cn/configuration?id=crossoriginlinks)
+  - [ ] [markdown 文档页内目录](https://github.com/mrpotatoes/docsify-toc)
+  - [X] [pdf 渲染](https://github.com/lazypanda10117/docsify-pdf-embed)
+  - [ ] 各种群的链接
+  - [ ] 分流&转专业模块
+- [插件列表](https://docsify.js.org/#/awesome?id=plugins)
 
--   [插件列表](https://docsify.js.org/#/awesome?id=plugins)
-    - [ ]  [评论系统](https://docsify.js.org/#/zh-cn/plugins?id=disqus)
-    - [ ]  [在 github 编辑](https://docsify.js.org/#/zh-cn/plugins?id=%e5%9c%a8-github-%e4%b8%8a%e7%bc%96%e8%be%91)
-    - [ ]  [分页](https://docsify.js.org/#/zh-cn/plugins?id=pagination)
-    - [ ]  [导出 pdf 文件](https://github.com/meff34/docsify-to-pdf-converter)
-    - [ ]  [添加 footer](https://github.com/alertbox/docsify-footer)
-    - [ ]  [支持框图](https://github.com/Leward/mermaid-docsify)
-    - [ ]  [自动各级添加 header 前的数字](https://github.com/markbattistella/docsify-autoHeaders)
-    - [ ]  [添加文档修改时间](https://github.com/alertbox/docsify-footer)
-    - [ ]  [统计网站访问数量](https://github.com/mg0324/docsify-busuanzi)
+  - [X] [评论系统](https://docsify.js.org/#/zh-cn/plugins?id=disqus)
+  - [ ] [在 github 编辑](https://docsify.js.org/#/zh-cn/plugins?id=%e5%9c%a8-github-%e4%b8%8a%e7%bc%96%e8%be%91)
+  - [X] [分页](https://docsify.js.org/#/zh-cn/plugins?id=pagination)
+  - [ ] [导出 pdf 文件](https://github.com/meff34/docsify-to-pdf-converter)
+  - [ ] [添加 footer](https://github.com/alertbox/docsify-footer)
+  - [ ] [支持框图](https://github.com/Leward/mermaid-docsify)
+  - [ ] [自动各级添加 header 前的数字](https://github.com/markbattistella/docsify-autoHeaders)
+  - [ ] [添加文档修改时间](https://github.com/alertbox/docsify-footer)
+  - [X] [统计网站访问数量](https://github.com/mg0324/docsify-busuanzi)
