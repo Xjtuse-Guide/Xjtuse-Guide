@@ -8,17 +8,19 @@
 
 首先不得不提的一点是**开源精神**！！！
 
-起初只是[我](https://blog.csdn.net/qq_46311811)和[易俊泉](https://blog.csdn.net/weixin_47692652)把自己的笔记放在 CSDN 上让学弟学妹们参考，这种算是比较简单快捷的方式，但是由于 CSDN 并不是定制的笔记网站，因此相对来说内容会很乱，导致找资料什么的都不方便，泉佬也将自己的笔记[开源到了 Github ](https://github.com/yijunquan-afk/XJTUSE-NOTES)上，但是并没有制作一个阅读的网站，只能是 clone 后在本地看，也不是很方便。
+起初只是[我](https://blog.csdn.net/qq_46311811)和[易俊泉学长](https://blog.csdn.net/weixin_47692652)把自己的笔记放在 CSDN 上让学弟学妹们参考，这种算是比较简单快捷的方式，但是由于 CSDN 并不是定制的笔记网站，因此相对来说内容会很乱，导致找资料什么的都不方便，泉佬也将自己的笔记[开源到了 Github ](https://github.com/yijunquan-afk/XJTUSE-NOTES)上，但是并没有制作一个阅读的网站，只能是 clone 后在本地看，也不是很方便。
 
 我在 CSDN 发博客时候就在考虑要不要自己做个笔记网站来分享一些笔记内容，但是由于当时各种事情太忙加上我也比较懒，一直搁置到现在，最近中期答辩完了闲下来，然后慢慢开始准备这个项目，同时也是找到了一些学弟学妹也有相同的想法，希望将自己为考试准备的一些东西分享出来，毕业后就没有什么作用了，不如帮助学弟学妹们学习更简单一些，节省出一些时间去做自己想做的事情，同时避免一些重复劳动。
 
+<span style='float:right'>---- by 霍嘉</span>
 ## 这个项目有什么
 
 这个项目中主要包含有三个部分:
 
 1. 对于所有课程的介绍，包括课内笔记，复习笔记，备考经验等
 2. 毕业去向交流，包含四个模块：考研、保研、工作、出国，有对应的经验帖做介绍
-3. 学长学姐有话说，主要是对于自己大学生活的一个回顾总结，以及对于学弟学妹们的一些建议
+3. 分流&转专业，主要是学长学姐们介绍自己为什么选择软件工程专业以及转专业的一些经验
+4. 学长学姐有话说，主要是对于自己大学生活的一个回顾总结，以及对于学弟学妹们的一些建议
 
 ## 怎样使用这个项目
 
@@ -35,7 +37,7 @@ docsify serve .
 
 ## Feature
 
-通过集成 docsify 多样化的插件，文档支持 Latex 公式,...
+通过集成 docsify 多样化的插件，文档支持 Latex 公式， [pdf文件渲染](How-to-Contribute?id=如何添加-pdf-文件预览)
 
 ## 如何参与贡献该项目
 
@@ -64,7 +66,8 @@ docsify serve .
   - [ ] [markdown 文档页内目录](https://github.com/mrpotatoes/docsify-toc)
   - [X] [pdf 渲染](https://github.com/lazypanda10117/docsify-pdf-embed)
   - [ ] 各种群的链接
-  - [ ] 分流&转专业模块
+  - [x]  分流&转专业模块
+
 - [插件列表](https://docsify.js.org/#/awesome?id=plugins)
 
   - [X] [评论系统](https://docsify.js.org/#/zh-cn/plugins?id=disqus)

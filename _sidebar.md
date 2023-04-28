@@ -2,4 +2,5 @@
 -   [如何贡献](How-to-Contribute.md)
 -   [课程列表](docs/课内笔记/README.md)
 -   [升学&就业](docs/升学&就业/README.md)
+-   [分流&转专业](docs/分流&转专业/README.md)  
 -   [学长学姐有话说](docs/学长学姐有话说/README.md)

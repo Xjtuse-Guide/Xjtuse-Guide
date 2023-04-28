@@ -13,4 +13,7 @@
     -   [保研](docs/升学&就业/保研/README.md)
     -   [工作](docs/升学&就业/工作/README.md)
     -   [出国](docs/升学&就业/出国/README.md)
+-   [分流&转专业](docs/分流&转专业/README.md)
+    -   [分流](docs/分流&转专业/README?id=大类分流)
+    -   [转专业](docs/分流&转专业/README?id=转专业)
 -   [学长学姐有话说](docs/学长学姐有话说/README.md)
