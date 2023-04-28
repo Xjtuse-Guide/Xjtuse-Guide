@@ -84,6 +84,11 @@
         },
         // 网站访问量
         busuanzi: true,
+        timeUpdater: {
+          text: "<div style='color:gray;font-size:12px;text-align: right'>Last Modified:&emsp;{docsify-updated}</div>",
+          formatUpdated: "{YYYY}/{MM}/{DD} {HH}:{mm}",
+          whereToPlace: "top",  // "top" or "bottom", default to "bottom"
+        },
         // todo
         // plugins: [EditOnGithubPlugin.create('https://github.com/Snailclimb/JavaGuide-Interview/blob/master/')],
       };
@@ -124,5 +129,8 @@
     <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
     <!--统计访问量插件-->
     <script src="https://unpkg.com/docsify-busuanzi@1.0.1/dist/docsify-busuanzi.min.js"></script>
+
+    <!--  页面更新时间  -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
   </body>
 </html>

@@ -66,16 +66,16 @@ docsify serve .
   - [ ] [markdown 文档页内目录](https://github.com/mrpotatoes/docsify-toc)
   - [X] [pdf 渲染](https://github.com/lazypanda10117/docsify-pdf-embed)
   - [ ] 各种群的链接
-  - [x]  分流&转专业模块
+  - [x] 分流&转专业模块
 
 - [插件列表](https://docsify.js.org/#/awesome?id=plugins)
 
   - [X] [评论系统](https://docsify.js.org/#/zh-cn/plugins?id=disqus)
   - [ ] [在 github 编辑](https://docsify.js.org/#/zh-cn/plugins?id=%e5%9c%a8-github-%e4%b8%8a%e7%bc%96%e8%be%91)
   - [X] [分页](https://docsify.js.org/#/zh-cn/plugins?id=pagination)
-  - [ ] [导出 pdf 文件](https://github.com/meff34/docsify-to-pdf-converter)
+  - [x] [导出 pdf 文件](https://github.com/meff34/docsify-to-pdf-converter) （插件不能集成使用，不做了）
   - [ ] [添加 footer](https://github.com/alertbox/docsify-footer)
   - [ ] [支持框图](https://github.com/Leward/mermaid-docsify)
   - [ ] [自动各级添加 header 前的数字](https://github.com/markbattistella/docsify-autoHeaders)
-  - [ ] [添加文档修改时间](https://github.com/alertbox/docsify-footer)
+  - [x] [添加文档修改时间](https://github.com/pfeak/docsify-updated)
   - [X] [统计网站访问数量](https://github.com/mg0324/docsify-busuanzi)
