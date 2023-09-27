@@ -43,12 +43,17 @@
         // 最大支持渲染的标题层级
         maxLevel: 5,
         // 自定义侧边栏后默认不会再生成目录，设置生成目录的最大层级（建议配置为2-4）
-        subMaxLevel: 3,
+        subMaxLevel: 2,
         // 小屏设备下合并导航栏到侧边栏
         mergeNavbar: true,
         // 显示文档更新日期
         formatUpdated: "{MM}/{DD} {HH}:{mm}",
-        // routerMode: 'history',
+        // routerMode: "history",
+        // // 跨链图片
+        // crossOriginLinks: [
+        //   "https://gitee.com/yi-junquan/image_gitee/raw/master/images/",
+        //   "http://cdn.hydrion-qlz.top/gitee/",
+        // ],
         /*搜索相关设置*/
         search: {
           maxAge: 86400000, // 过期时间，单位毫秒，默认一天
@@ -87,7 +92,7 @@
         timeUpdater: {
           text: "<div style='color:gray;font-size:12px;text-align: right'>Last Modified:&emsp;{docsify-updated}</div>",
           formatUpdated: "{YYYY}/{MM}/{DD} {HH}:{mm}",
-          whereToPlace: "top",  // "top" or "bottom", default to "bottom"
+          whereToPlace: "top", // "top" or "bottom", default to "bottom"
         },
         // todo
         // plugins: [EditOnGithubPlugin.create('https://github.com/Snailclimb/JavaGuide-Interview/blob/master/')],

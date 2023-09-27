@@ -2,7 +2,7 @@
 
 西安交通大学软件学院学习指南
 
-!> 目前该项目处于起步阶段，非常希望大家可以一起帮助完善内容，做成软工同学们一个交流学习的平台
+!> 目前该项目处于与大二上同步更新阶段，有更新电路，面向对象和数据结构。除此以外我们还有很多现存的内容。非常希望大家可以一起帮助完善内容，做成软工同学们一个交流学习的平台
 
 ## 为什么发起这个项目
 
@@ -12,7 +12,8 @@
 
 我在 CSDN 发博客时候就在考虑要不要自己做个笔记网站来分享一些笔记内容，但是由于当时各种事情太忙加上我也比较懒，一直搁置到现在，最近中期答辩完了闲下来，然后慢慢开始准备这个项目，同时也是找到了一些学弟学妹也有相同的想法，希望将自己为考试准备的一些东西分享出来，毕业后就没有什么作用了，不如帮助学弟学妹们学习更简单一些，节省出一些时间去做自己想做的事情，同时避免一些重复劳动。
 
-<span style='float:right'>---- by 霍嘉</span>
+`<span style='float:right'>`---- by 霍嘉
+
 ## 这个项目有什么
 
 这个项目中主要包含有三个部分:
@@ -23,6 +24,7 @@
 4. 学长学姐有话说，主要是对于自己大学生活的一个回顾总结，以及对于学弟学妹们的一些建议
 
 ## 怎样使用这个项目
+看到本页可能证明你会科学上网，建议以此方式浏览本网站，否则可能遇到加载不出等问题
 
 本项目已部署到 Github Pages，可以[在线](https://xjtuse-guide.github.io/Xjtuse-Guide/#/)浏览
 
@@ -47,6 +49,7 @@ docsify serve .
 - 如果添加新的文件，请尽可能在所有可能引用该文件的地方加入引入，确保侧边栏显示正确
 - 如果你不懂如何自己提交，可提 issue 留下自己的联系方式，会有维护同学联系你进行文件上传
 - [commit规范](https://blog.csdn.net/weixin_51474815/article/details/122652198)可以通过安装vscode插件git-commit-plugin来实现
+- 部分图片来自[GitHub图床](https://blog.csdn.net/github_39655029/article/details/113181770)，若加载不出来，请进行科学上网
 
 提交细节请参考[How to Contribute](How-to-Contribute.md)
 
@@ -57,7 +60,7 @@ docsify serve .
 - 西交软件保研交流群（qq）：63606491
   - 仅提供给西交软工专业的同学交流保研经验，入群验证请提供年级、学号和姓名。
 
-## todo
+## TODO
 
 - 内容完善
 - 功能问题
@@ -66,16 +69,15 @@ docsify serve .
   - [ ] [markdown 文档页内目录](https://github.com/mrpotatoes/docsify-toc)
   - [X] [pdf 渲染](https://github.com/lazypanda10117/docsify-pdf-embed)
   - [ ] 各种群的链接
-  - [x] 分流&转专业模块
-
+  - [X] 分流&转专业模块
 - [插件列表](https://docsify.js.org/#/awesome?id=plugins)
 
   - [X] [评论系统](https://docsify.js.org/#/zh-cn/plugins?id=disqus)
   - [ ] [在 github 编辑](https://docsify.js.org/#/zh-cn/plugins?id=%e5%9c%a8-github-%e4%b8%8a%e7%bc%96%e8%be%91)
   - [X] [分页](https://docsify.js.org/#/zh-cn/plugins?id=pagination)
-  - [x] [导出 pdf 文件](https://github.com/meff34/docsify-to-pdf-converter) （插件不能集成使用，不做了）
+  - [X] [导出 pdf 文件](https://github.com/meff34/docsify-to-pdf-converter) （插件不能集成使用，不做了）
   - [ ] [添加 footer](https://github.com/alertbox/docsify-footer)
   - [ ] [支持框图](https://github.com/Leward/mermaid-docsify)
   - [ ] [自动各级添加 header 前的数字](https://github.com/markbattistella/docsify-autoHeaders)
-  - [x] [添加文档修改时间](https://github.com/pfeak/docsify-updated)
+  - [X] [添加文档修改时间](https://github.com/pfeak/docsify-updated)
   - [X] [统计网站访问数量](https://github.com/mg0324/docsify-busuanzi)
