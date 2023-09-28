@@ -42,8 +42,6 @@ $$
 
 设二元函数$z=f(x,y)$在平面区域D上具有一阶连续偏导数，则对于每一个点P（x，y）都可定出一个向量
 
-<img src="https://raw.githubusercontent.com/yijunquan-afk/img-bed-1/main/img4/1695721697.png" alt="img" style="zoom: 85%;"/>
-
 ,该函数就称为函数$z=f(x,y)$在点P（x，y）的梯度，记作gradf（x，y）或$\nabla f(x,y)$,即有：
 $$
 gradf(x,y)=\nabla f(x,y)=\{\frac{\partial f}{\partial x},\frac{\partial f}{\partial y}\}=f_x(x,y)\vec{i}+f_y(x,y)\vec{j}
