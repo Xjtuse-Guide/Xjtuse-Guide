@@ -157,11 +157,11 @@ B. `test b = new test();`
 
 C. `Superclass b = new test();`
 
-D. `Test b = new superclass();`
+D. `test b = new superclass();`
 
 E. `Superclass b = (test) superclass();`
 
-F. `Test b = (test) superclass();`
+F. `test b = (test) superclass();`
 
 7. 定义一个函数头 `public String xjtuse(int a, String b, double c)`，以下哪两个可以算方法的重载：
 
