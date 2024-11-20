@@ -31,7 +31,7 @@
 也可以将本项目拉取到本地运行，本项目使用 docsify 编译，因此本地需有 [nodejs](https://nodejs.org/en) 环境，建议下载 LTS 版本，下载后全局安装 docsify 依赖，然后运行即可。
 
 ```bash
-git clone https://github.com/Hydrion-Qlz/XJTUSE-GUIDE.git
+git clone https://github.com/Xjtuse-Guide/Xjtuse-Guide.git
 cd xjtuse-guide
 npm i docsify-cli -g
 docsify serve .
