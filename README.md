@@ -55,6 +55,8 @@ docsify serve .
 
 > 如果是软工的同学，建议还是自己搞懂如何提 PR、如何使用 GitHub，算是一种必须掌握的技能
 
+> 可以使用 scripts 文件夹中的 markdown_convert.py 工具自动上传 markdown 文件中的本地图片到我们的图床中。具体使用方法: [上传工具使用介绍](script/markdown_convert_usage.md)
+
 ## 友群链接
 
 - 西交软件保研交流群（qq）：636064912
