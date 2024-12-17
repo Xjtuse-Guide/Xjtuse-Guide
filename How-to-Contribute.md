@@ -1,10 +1,10 @@
 # 如何参与贡献
 
-本项目使用 `markdown` + `docsify` + `Github Pages` 部署
+本项目使用 `markdown` + `docsify` + `GitHub Pages` 部署
 
 !> docsify 扩展 markdown 的[新语法](https://docsify.js.org/#/zh-cn/helpers)，有部分新加入的语法
 
-首先需要确保本地有[nodejs](https://nodejs.org/en)环境，且已经安装好了 [docsify](https://docsify.js.org/#/zh-cn/quickstart) 依赖，将项目 fork 到自己仓库后 clone 到本地，创建新分支进行修改，修改完成后 push 到远程仓库，然后向本仓库提起 pr 即可
+首先需要确保本地有 [Node.js](https://nodejs.org/en) 环境，且已经安装好了 [docsify](https://docsify.js.org/#/zh-cn/quickstart) 依赖，将项目 fork 到自己仓库后 clone 到本地，创建新分支进行修改，修改完成后 push 到远程仓库，然后向本仓库提起 PR 即可
 
 !> 注意，为了避免一些莫名其妙的错误，请勿使用相对路径，在使用时请使用从 docs 开始的绝对路径`<br/>`例如: `docs/课内笔记/大一上/高等数学上/笔记/导数.md`
 
@@ -24,7 +24,7 @@
 |          ├─高等数学上                  -->      科目目录
 |              ├─README.md              -->     科目介绍
 |              ├─_sidebar.md            -->     进入当前科目时的侧边栏
-|              ├─.nojekyll              -->     空文件，提示github不要忽视_开头的文件
+|              ├─.nojekyll              -->     空文件，提示 GitHub 不要忽视_开头的文件
 |              ├─笔记                   -->     笔记目录
 |                 └─notes...
 |              └─考试经验帖.md           -->     学长学姐经验总结
@@ -102,12 +102,12 @@
 
 类似于升学&就业部分，也是通过每个人单独一个 `markdown`文件进行维护，将文件存储在对应目录下的经验帖目录中，文件名设置为 `姓名.md`，文件创建完毕后需要在 `docs/学长学籍有话说/经验帖/_sidebar.md`和 `docs/学长学籍有话说/README.md`中添加对应的条目
 
-## 如何添加 pdf 文件预览
+## 如何添加 PDF 文件预览
 
-!> 注意：由于Github限制每个仓库的大小为500MB，为了确保仓库容量，请在自己的Github创建一个单独的repository，然后将pdf文件传到自己的仓库中，最后在刚刚创建的md文件中按照下面的格式要求写入预览pdf的链接即可<br/>
-另外，尽量在上传前对自己的pdf文件进行**压缩**，减少文件大小，加快响应时间，可使用 [I love pdf](https://www.ilovepdf.com/zh-cn/compress_pdf)网站进行压缩
+!> 注意：由于 GitHub 限制每个仓库的大小为 500MB，为了确保仓库容量，请在自己的 GitHub 创建一个单独的 repository，然后将 PDF 文件传到自己的仓库中，最后在刚刚创建的 md 文件中按照下面的格式要求写入预览 PDF 的链接即可<br/>
+另外，尽量在上传前对自己的 PDF 文件进行**压缩**，减少文件大小，加快响应时间，可使用 [I love pdf](https://www.ilovepdf.com/zh-cn/compress_pdf) 网站进行压缩
 
-在添加 pdf 文件时候，需要先创建一个对应的 markdown 文件，在文件中按照下面的格式书写即可链接到 pdf 文件
+在添加 PDF 文件时候，需要先创建一个对应的 markdown 文件，在文件中按照下面的格式书写即可链接到 PDF 文件
 
 ````txt
 ```pdf
@@ -116,7 +116,7 @@
 
 ````
 
-例如, 我想在 `docs/课内笔记/大一上/高等数学上/笔记/导数.md`中引用一个 pdf, 我只需要在 `导数.md`中写入下面的内容即可:
+例如, 我想在 `docs/课内笔记/大一上/高等数学上/笔记/导数.md`中引用一个 PDF, 我只需要在 `导数.md`中写入下面的内容即可:
 
 ````txt
 ```pdf
