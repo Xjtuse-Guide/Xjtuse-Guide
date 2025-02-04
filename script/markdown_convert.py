@@ -12,8 +12,9 @@ import sys
 
 
 COMMON_PREFIX = "https://raw.githubusercontent.com/yijunquan-afk/img-bed-1/main/"
-all_prefix = {"img/", "img1/", "", "images/", "img12/", "img13/", "img14/", "img2/", "img3/",
-              "img4/", "img5/", "img6/", "imge/", "imge3/", "imges3/", "imgethe/"}
+all_prefix =["img/", "img1/", "", "images/", "img12/", "img13/", "img14/", "img2/", "img3/",
+              "img4/", "img5/", "img6/", "imge/", "imge3/", "imges3/", "imgethe/"]
+use_frequency = {prefix: 0 for prefix in all_prefix}
 
 # 用于屏蔽输出
 devnull = open(os.devnull, "w")
@@ -31,14 +32,19 @@ else:
 
 def try_ignore_ssl_exception(func):
     """
-    不断尝试调用函数 func 直到不发生异常并成功，忽略其中发生的任何 SSLError, 但在出现其他错误时传递错误。
-    这是因为墙非常喜欢隔三差五中断一下 GitHub 连接，导致时不时出现 SSLError 然后让整个程序挂掉
+    不断尝试调用函数 func 直到不发生异常并成功，忽略其中发生的任何 SSLError 和 ConnectionAbortError, 但在出现其他错误时传递错误。
+    这是因为墙非常喜欢隔三差五中断一下 GitHub 连接，导致时不时出现异常然后让整个程序挂掉
     """
     while True:
         try:
             return func()
         except requests.exceptions.SSLError:
             print("已忽略 SSL 连接被刻意阻断而引发的错误。", file=dst)
+        except requests.exceptions.ConnectionError as e:
+            if "Connection aborted" in str(e):
+                print("已忽略连接被刻意中断而引发的错误。", file=dst)
+            else:
+                raise e
 
 
 def upload_image(url):
@@ -100,7 +106,7 @@ def modify_image_links_in_markdown(file_path, img_bed_prefix, ignore_prefix=None
                 # 我们可以更改文件路径为完整的，即在前方添加 markdown 文件的目录，用于处理那些以相对路径存在的文件
                 url = os.path.join(os.path.dirname(file_path), url)
             # 检查图片是否存在
-            print(f"找到了本地图片路径: {url}, 此文件{"存在" if os.path.exists(url) else "不存在"}", file=dst)
+            print(f"找到了本地图片路径: {url}, 此文件{'存在' if os.path.exists(url) else '不存在'}", file=dst)
             if not os.path.exists(url):
                 print(f"警告: 未能在磁盘上找到图片 {url}, 因此跳过上传, markdown 中的路径将会保持不变...", file=dst)
                 return f'![{alt_text}]({url})'
@@ -112,7 +118,8 @@ def modify_image_links_in_markdown(file_path, img_bed_prefix, ignore_prefix=None
                         if url.split("/")[-1].startswith(prefix):
                             new_url = upload_image(url)
                             return f'![{alt_text}]({new_url})'
-        
+                # 按照频率从高到低检查图床
+                all_prefix.sort(key=lambda x: use_frequency[x], reverse=True)
                 # 搜索图片是否在已有的图床下
                 for prefix in all_prefix:
                     # 拼接图床 url
@@ -124,6 +131,8 @@ def modify_image_links_in_markdown(file_path, img_bed_prefix, ignore_prefix=None
                     # 如果存在，不需要上传
                     if response.ok:
                         print(f"找到本地图片路径对应的网络图片为 {new_url}，此图片存在，因此不会被上传。", file=dst)
+                        # 更新使用频率
+                        use_frequency[prefix] += 1
                         break
                 else:
                     # 如果文件不存在于网络图床，则上传文件。
@@ -154,7 +163,9 @@ def modify_image_links_in_markdown(file_path, img_bed_prefix, ignore_prefix=None
     new_markdown_text = re.sub(html_pattern, replace_link, new_markdown_text)
     
     # 写回 Markdown 文件
-    with open(file_path.strip(".md") + "_changed.md", "w", encoding="utf-8") as file:
+    with open(file_path.strip(".md") + "_backup.md", "w", encoding="utf-8") as file:
+        file.write(markdown_text)
+    with open(file_path, "w", encoding="utf-8") as file:
         file.write(new_markdown_text)
     print("图片链接更新完成", file=dst)
 
