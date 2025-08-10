@@ -9,6 +9,7 @@ import re
 import requests
 import os
 import sys
+from urllib.parse import urlparse
 
 
 COMMON_PREFIX = "https://raw.githubusercontent.com/yijunquan-afk/img-bed-1/main/"
@@ -50,28 +51,77 @@ def try_ignore_ssl_exception(func):
 def upload_image(url):
     """
     上传图片到 telegraph 图床
-    :params url: 本地图片的地址，不能为网络图片地址。
+    :params url: 图片地址，可以是本地图片路径或网络图片URL
     """
     print("正在上传图片到图床...", file=dst)
-    f = open(url, "rb")
-    # post 直接上传
-    # 如果你有其他的 telegraph 图床，可以对应替换下一行的链接和 new_url = "https://telegraph-image-5ms.pages.dev" + response.json()[0]["src"] 这行的链接
-    response = requests.post("https://telegraph-image-5ms.pages.dev/upload", headers={
-        "Accept": "application/json, text/plain, */*"
-    }, files={"file": f})
-    f.close()
-    if not response.ok:
-        print("Failed to upload image.", file=dst)
+    
+    try:
+        # 判断是否为网络图片
+        if url.startswith("http"):
+            # 网络图片：先下载到内存
+            print(f"正在下载网络图片: {url}", file=dst)
+            if proxies is not None:
+                response = try_ignore_ssl_exception(lambda: requests.get(url, proxies=proxies))
+            else:
+                response = try_ignore_ssl_exception(lambda: requests.get(url))
+            
+            if not response.ok:
+                print(f"下载网络图片失败: {url}", file=dst)
+                return url
+            
+            # 从URL中提取文件名，如果没有则使用默认名称
+            filename = url.split('/')[-1]
+            if '.' not in filename or not any(filename.lower().endswith(ext) for ext in ['.jpg', '.jpeg', '.png', '.gif', '.webp']):
+                # 尝试从Content-Type获取文件扩展名
+                content_type = response.headers.get('Content-Type', '')
+                if 'image/jpeg' in content_type:
+                    filename = 'image.jpg'
+                elif 'image/png' in content_type:
+                    filename = 'image.png'
+                elif 'image/gif' in content_type:
+                    filename = 'image.gif'
+                elif 'image/webp' in content_type:
+                    filename = 'image.webp'
+                else:
+                    filename = 'image.jpg'  # 默认使用jpg
+            
+            # 准备上传数据
+            files = {"file": (filename, response.content, response.headers.get('Content-Type', 'image/jpeg'))}
+        else:
+            # 本地图片：直接读取文件
+            if not os.path.exists(url):
+                print(f"本地图片文件不存在: {url}", file=dst)
+                return url
+            
+            with open(url, "rb") as f:
+                file_content = f.read()
+            
+            filename = os.path.basename(url)
+            files = {"file": (filename, file_content)}
+        
+        # 上传到 telegraph 图床
+        # 如果你有其他的 telegraph 图床，可以对应替换下一行的链接和 new_url 中的链接
+        upload_response = requests.post("https://telegraph-image-5ms.pages.dev/upload", 
+                                      headers={"Accept": "application/json, text/plain, */*"}, 
+                                      files=files)
+        
+        if not upload_response.ok:
+            print(f"上传图片失败: {url}", file=dst)
+            return url
+
+        # 读取返回的图床 url
+        new_url = "https://telegraph-image-5ms.pages.dev" + upload_response.json()[0]["src"]
+        print(f"上传图片成功，新链接为 {new_url}", file=dst)
+
+        return new_url
+        
+    except Exception as e:
+        print(f"上传图片时发生错误: {e}", file=dst)
         return url
-
-    # 读取返回的图床 url
-    new_url = "https://telegraph-image-5ms.pages.dev" + response.json()[0]["src"]
-    print(f"上传图片成功，新链接为 {new_url}", file=dst)
-
-    return new_url
+    
 
 
-def modify_image_links_in_markdown(file_path, img_bed_prefix, ignore_prefix=None, check_exist=False):
+def modify_image_links_in_markdown(file_path, img_bed_prefix, ignore_prefix=None, check_exist=False, blacklist=None):
     """
     读取 markdown 文件，解析所有图片类内容，上传本地图片到图床中。
     如果 check_exist 为 True，尝试替换其中的本地图片为泉佬图床的同名图片；如果图片不存在于泉佬的图床中，再上传到 telegraph 图床，可以减少图床占用。
@@ -80,6 +130,7 @@ def modify_image_links_in_markdown(file_path, img_bed_prefix, ignore_prefix=None
     :params check_exist: 为 True 时检查本地图片是否在泉佬图床中存在，如果存在则不上传
     :params img_bed_prefix: 默认为 COMMON_PREFIX, 指向泉佬图床的主路径
     :params ignore_prefix: 一个列表，如果图片的开头位于这个列表中，直接上传到 telegraph 图床，跳过检查，仅在 check_exist 为 True 时有效
+    :params blacklist: 当图片来源于哪些网站时，强制上传图片到图床。适用于 CSDN 等不允许外链访问的网站的情况。
     """
     with open(file_path, "r", encoding="utf-8") as file:
         markdown_text = file.read()
@@ -147,10 +198,17 @@ def modify_image_links_in_markdown(file_path, img_bed_prefix, ignore_prefix=None
             else:
                 response = try_ignore_ssl_exception(lambda: requests.head(url))
             if response.ok:
-                print(f"找到引用的网络图片，网址为: {url}，此文件存在，因此不会被上传。", file=dst)
+                hostname = urlparse(url).hostname
+                # 如果图片来源于黑名单中的网站，强制上传
+                if blacklist is not None and any(hostname.endswith(b) for b in blacklist):
+                    print(f"引用的图片 {url} 来自黑名单中的网站 {hostname}，因此强制上传到图床。", file=dst)
+                    new_url = upload_image(url)
+                else:
+                    print(f"找到引用的网络图片，网址为: {url}，此文件存在，因此不会被上传。", file=dst)
+                    new_url = url
             else:
                 print(f"警告：引用的图片 {url} 是一个网址，但无法访问，因此跳过上传, markdown 中的路径将会保持不变...", file=dst)
-            new_url = url
+                new_url = url
         
         # 重新拼装图片语法
         return f'![{alt_text}]({new_url})'
@@ -178,9 +236,10 @@ if __name__ == "__main__":
     parser.add_argument("--skip-prefix", nargs="+", help="认为以特定前缀开头的图片一定不在图床中，可用于减少搜索时间。")
     parser.add_argument("--silent", action="store_true", help="屏蔽输出")
     parser.add_argument("--check-exist", action="store_true", help="检查图片是否在泉佬的图床中存在，如果存在则更改链接为已有图床地址，而不再次上传", default=False)
+    parser.add_argument("--website-blacklist", nargs="+", help="指定图片位于哪些网站时，仍然必须上传图片到图床，适用于 CSDN 等不允许外链访问自身图片的网站。只需要输入主机名，不需要包含 http(s) 前缀。", default=["img-blog.csdnimg.cn"])
     args = parser.parse_args()
 
     if args.silent:
         dst = devnull
 
-    modify_image_links_in_markdown(args.file, COMMON_PREFIX, args.skip_prefix, args.check_exist)
+    modify_image_links_in_markdown(args.file, COMMON_PREFIX, args.skip_prefix, args.check_exist, args.website_blacklist)
