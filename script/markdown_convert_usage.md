@@ -27,6 +27,8 @@ pip install requests
 
 `--silent`：不输出任何信息。
 
+`--website-blacklist`：输入此参数后，对于位于名单中的网站，强制上传这些网站中的图片到图床中。适用于笔记中包含 csdn 等不允许外链访问的网站上的图片的情况。默认情况下，将强制上传 `img-blog.csdnimg.cn` 域名下的图片。
+
 此外，还需要输入待转换的 markdown 文件的位置。
 
 输出文件和输入文件在同一目录下，名称为输入文件的名称再加上“_changed"后缀。
