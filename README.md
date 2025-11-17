@@ -63,25 +63,5 @@ docsify serve .
   - 仅提供给西交软工专业的同学交流保研经验，入群验证请提供年级、学号和姓名。
 - 西交软件学院水群（qq）：337125628
   - 给软件的大家一个聊天的qq群，本站有更新也会在群里面更新。
-
-## TODO
-
-- 内容完善
-- 功能问题
-
-  - [ ] [外链图片](https://docsify.js.org/#/zh-cn/configuration?id=crossoriginlinks)
-  - [ ] [markdown 文档页内目录](https://github.com/mrpotatoes/docsify-toc)
-  - [X] [PDF 渲染](https://github.com/lazypanda10117/docsify-pdf-embed)
-  - [ ] 各种群的链接
-  - [X] 分流&转专业模块
-- [插件列表](https://docsify.js.org/#/awesome?id=plugins)
-
-  - [X] [评论系统](https://docsify.js.org/#/zh-cn/plugins?id=disqus)
-  - [ ] [在 GitHub 编辑](https://docsify.js.org/#/zh-cn/plugins?id=%e5%9c%a8-github-%e4%b8%8a%e7%bc%96%e8%be%91)
-  - [X] [分页](https://docsify.js.org/#/zh-cn/plugins?id=pagination)
-  - [X] [导出 PDF 文件](https://github.com/meff34/docsify-to-pdf-converter) （插件不能集成使用，不做了）
-  - [ ] [添加 footer](https://github.com/alertbox/docsify-footer)
-  - [ ] [支持框图](https://github.com/Leward/mermaid-docsify)
-  - [ ] [自动各级添加 header 前的数字](https://github.com/markbattistella/docsify-autoHeaders)
-  - [X] [添加文档修改时间](https://github.com/pfeak/docsify-updated)
-  - [X] [统计网站访问数量](https://github.com/mg0324/docsify-busuanzi)
+- 西交软件内推群 (qq): 2162036705
+  - 仅提供给西交同学工作实习经验，有大厂内推机会，入群验证请提供年级、学号和姓名。
