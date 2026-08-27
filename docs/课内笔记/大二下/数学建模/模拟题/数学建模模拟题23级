@@ -1,0 +1,27 @@
+## 23级数学建模模拟题
+
+```
+只有第五题和第八题不是PPT上原题，其余都是
+```
+
+一．假设在某地区的总人口为 N，在短期内不变，某时刻有突发消息产生，建立模型求解传播过程 
+
+二．4 条腿长度相等的椅子放在起伏不平的地面上, 问 4 条腿能否同时着地而放稳? 
+
+三．北方城镇的有些建筑物的窗户是双层的，即窗 户上装两层玻璃夹着一层空气，如图所示。据说这样做是为了保暖，即减少室内向室外的热量流失，试建 立一个模型来描述热量通过窗户的热传导（即 流失）过程，并将双层玻璃窗与 用同样多材料做成 的单层玻璃窗的热量传导进行对比。 
+
+四．运用希尔加密进行解决。（设 A-Z 分别对应 0-25）（只对 THAN 加密解密）（下面这张课件PPT是A对应1，但试卷上会明确给出A对应0/1）
+
+![image-20260607170957484](https://telegraph-image-5ms.pages.dev/file/BQACAgUAAyEGAASIfjD1AAICI2olOFOpE0Xzc3teAqh8l94pareIAAKyIQACeqgpVYjcjfEmRmJvOwQ.png)
+
+五．已知 R=6400km 问与地球自传角速度相同的卫星距地面高度为多少？信号覆 盖面积为多大？ 
+
+六．在害虫益虫模型中，使用杀虫剂后为什么害虫增加，益虫减少？
+
+![image-20260607171020996](https://telegraph-image-5ms.pages.dev/file/BQACAgUAAyEGAASIfjD1AAICJGolOFZAzgncMs-BOM873OMFUkl_AAKzIQACeqgpVfV113nBSooyOwQ.png)
+
+七．贝叶斯
+
+![image-20260607171030156](https://telegraph-image-5ms.pages.dev/file/BQACAgUAAyEGAASIfjD1AAICJWolOFlaTEJ_VnGRKq0JSezUJjDtAAK0IQACeqgpVdr5UPD48PRhOwQ.png)
+
+八．试给出一种回归模型，并给出一般回归问题损失函数的定义，基于损失函数， 介绍模型求解参数的基本方法。
